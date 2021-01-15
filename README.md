@@ -6,16 +6,16 @@
 Organizei os arquivos da seguinte forma
 
     * src
-       * public
-           * global.css (possui reset do css, variáveis e estilizações globais)
-           * index.html (estrutura do site)
-           * manifest.json (desenvolvido para função de PWA, mas até agora sem ícones)
-           * serviceWorker.js (desenvolvido para instalação e caching da PWA, mas o manifest não possui ícones)
-       * static
-           * css
-               * styles.css (estilizações específicas para o index.html)
-           * js
-               * index.js (script de ativação da PWA)
+      * public
+         *  global.css (possui reset do css, variáveis e estilizações globais)
+            index.html (estrutura do site)
+          * manifest.json (desenvolvido para função de PWA, mas até agora sem ícones)
+          * serviceWorker.js (desenvolvido para instalação e caching da PWA, mas o manifest não possui ícones)
+      * static
+          * css
+                styles.css (estilizações específicas para o index.html)
+         *  js
+              * index.js (script de ativação da PWA)
 
 
 
