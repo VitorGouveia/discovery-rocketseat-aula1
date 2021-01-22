@@ -33,6 +33,7 @@ app.get("/", (req, res) => {
 
 app.post("/", function(req, res) {
     const { description, amount, date } = req.body
+    const reversedDate = date.replace(/-/g, "/").split("/").reverse().join("/")
     const query = `
         INSERT INTO transactions(
             description,
@@ -41,7 +42,7 @@ app.post("/", function(req, res) {
         ) VALUES (?, ?, ?)
     `
 
-    const values = [description, amount, date]
+    const values = [description, amount, reversedDate]
 
     db.run(query, values, function(err) {
         if(err) {

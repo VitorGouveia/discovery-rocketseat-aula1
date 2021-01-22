@@ -72,7 +72,11 @@
                     {% for transaction in transactions %}
                         <tr>
                             <td class="description">{{transaction.description}}</td>
-                            <td class="expense">{{transaction.amount}}</td>
+                            {% if transaction.amount > -1 %}
+                                <td class="income">{{transaction.amount}}</td>
+                            {% else %}
+                                <td class="expense">{{transaction.amount}}</td>
+                            {% endif %}
                             <td class="date">{{transaction.date}}</td>
                             <td><img onclick="deleteTransaction({{transaction.id}})" src="/static/assets/minus.svg" alt="remover transação"></td>
                         </tr>
