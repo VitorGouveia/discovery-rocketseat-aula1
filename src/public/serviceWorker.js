@@ -1,11 +1,17 @@
 const cacheName = 'dev.finance$'
 const staticAssets = [
-    './src/public/index.html',
-    './src/public/global.css',
-    './src/public/manifest.json',
-    './src/public/serviceWorker.js',
-    './src/static/css/styles.css',
-    './src/static/js/index.js',
+    "./src/static/manifest.json",
+    "./src/static/serviceWorker.js",
+    "./src/public/index.html",
+    "./src/static/assets/expense.svg",
+    "./src/static/assets/income.svg",
+    "./src/static/assets/logo.svg",
+    "./src/static/assets/minus.svg",
+    "./src/static/assets/plus.svg",
+    "./src/static/assets/total.svg",
+    "./src/static/css/global.css",
+    "./src/static/css/styles.css",
+    "./src/static/js/index.js",
 ]
 
 self.addEventListener('install', async e => {

@@ -4,6 +4,12 @@
     "theme_color": "#ececec",
     "background_color": "#ffffff",
     "display": "standalone",
-    "scope": "/",
-    "start_url": "."
+    "start_url": ".",
+    "icons": [
+        {
+            "src": "../static/assets/logo512.png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        }
+    ]
 }
