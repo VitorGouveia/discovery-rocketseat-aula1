@@ -13,8 +13,8 @@ As minhas alterações incluem criação de novos arquivos, nova `div` para o us
 
 ## OBJETIVOS
     Backend:
-    - [] Criar API com node.js
-    - [] Guardar informações da aplicação num banco de dados sqlite
+    - [x] Criar API com node.js
+    - [x] Guardar informações da aplicação num banco de dados sqlite
     
     Frontend:
     - [x] Criar novos temas
