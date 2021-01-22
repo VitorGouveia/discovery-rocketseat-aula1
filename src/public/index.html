@@ -21,7 +21,8 @@
 <body>
 
     <header>
-        <img src="../static/assets/logo.svg" alt="logo dev.finance$">
+        <img src="../static/assets/logo.svg" id="logo" alt="logo dev.finance$">
+        <img src="../static/assets/sliders.svg" id="settings" alt="configurações">
     </header>
 
     <main class="container">
@@ -93,7 +94,26 @@
         </section>
     </main>
 
-    <div class="modal-overlay">
+    <div class="modal-overlay settings-modal">
+        <div class="modal">
+            <div class="form">
+                <h2>Configurações</h2>
+                <div class="input-group actions">
+                    <label for="dark">Tema</label>
+                    <select id="theme">
+                        <option value="1">Padrão</option>
+                        <option value="2">Omni</option>
+                    </select>
+                </div>
+                <div class="input-group actions">
+                    <a id="settings-button" class="button cancel">Cancelar</a>
+                    <button>Salvar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay form-modal">
         <div class="modal">
             <div class="form">
                 <h2>Nova Transação</h2>
@@ -113,7 +133,7 @@
                     </div>
 
                     <div class="input-group actions">
-                        <a class="button cancel">Cancelar</a>
+                        <a id="form-button" class="button cancel">Cancelar</a>
                         <button>Salvar</button>
                     </div>
                 </form>
