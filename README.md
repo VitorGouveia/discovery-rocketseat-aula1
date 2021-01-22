@@ -1,31 +1,13 @@
-# Discovery - Aula 1
-## Veja o vídeo no [YouTube](https://www.youtube.com/watch?v=NlDr6JX3VvA&ab_channel=MaykBrito)
+# Discovery - Aula 2
+## Veja o vídeo no [YouTube](https://www.youtube.com/watch?v=f13z6eFJEQg&ab_channel=MaykBrito)
 
 # FINAL [dev.finance$](https://vitorgouveia.github.io/discovery-rocketseat-aula1/src/public/)
 
-![site](https://iili.io/Km964R.jpg)
-
-## ARQUIVOS
-
-Organizei os arquivos da seguinte forma
-
-    * src
-      * public
-         *  global.css (possui reset do css, variáveis e estilizações globais)
-            index.html (estrutura do site)
-          * manifest.json (desenvolvido para função de PWA, mas até agora sem ícones)
-          * serviceWorker.js (desenvolvido para instalação e caching da PWA, mas o manifest não possui ícones)
-      * static
-          * css
-                styles.css (estilizações específicas para o index.html)
-         *  js
-              * index.js (script de ativação da PWA)
-
-
+![site](https://iili.io/fdLvff.jpg)
 
 ## ALTERAÇÕES
 
-As minhas alterações incluem criação de novos arquivos, nova `div` para o uso de flexbox e criação de `@media` para maior responsividade
+As minhas alterações incluem criação de novos arquivos, nova `div` para o uso de flexbox, criação de `@media` para maior responsividade e função ```PWA```
 
 
 
