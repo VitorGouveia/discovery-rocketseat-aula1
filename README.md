@@ -1,7 +1,7 @@
 # Discovery - Aula 2
 ## Veja o vídeo no [YouTube](https://www.youtube.com/watch?v=f13z6eFJEQg&ab_channel=MaykBrito)
 
-# FINAL [dev.finance$](https://vitorgouveia.github.io/discovery-rocketseat-aula1/src/public/)
+# FINAL [dev.finance$](https://vitorgouveia.github.io/maratona-discovery/src/public/)
 
 ![site](https://iili.io/fdLvff.jpg)
 
