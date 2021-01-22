@@ -17,5 +17,5 @@ As minhas alterações incluem criação de novos arquivos, nova `div` para o us
     - [] Guardar informações da aplicação num banco de dados sqlite
     
     Frontend:
-    - [x] Criar novos temas (Padrão e Omni)
-    - [x] Theme Switcher
+    - [] Criar novos temas
+    - [] Theme Switcher

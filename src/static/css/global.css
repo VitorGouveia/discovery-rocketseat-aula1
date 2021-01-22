@@ -12,7 +12,7 @@
     --card-minus: #c52929;
     --card-total: #49aa26;
     --modal-bg: #fff;
-    --select-bg: #e1e1e6;
+    --select-bg: #e9e9e9;
 }
 
 .omni {
@@ -48,7 +48,7 @@ input, textarea {
     width: 100%;
     border-radius: 0.25rem;
     color: var(--card-text);
-    background: var(--card-income);
+    background: var(--select-bg);
 }
 
 body {

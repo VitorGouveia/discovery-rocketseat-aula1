@@ -53,3 +53,7 @@ function toggleTheme() {
         setTheme("light")
     }
 })()
+
+const deleteTransaction = id => {
+    window.location.href = `http://localhost:3333/${id}`
+}
