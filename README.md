@@ -1,7 +1,8 @@
+# FINAL (com banco de dados) [dev.finance$](https://maratona-discovery.herokuapp.com/)
+# FINAL (estático) [dev.finance$](https://vitorgouveia.github.io/maratona-discovery/src/public/)
+
 # Discovery - Aula 2
 ## Veja o vídeo no [YouTube](https://www.youtube.com/watch?v=f13z6eFJEQg&ab_channel=MaykBrito)
-
-# FINAL [dev.finance$](https://vitorgouveia.github.io/maratona-discovery/src/public/)
 
 ## TEMA CLARO
 ![site](https://iili.io/f2tH1s.png)
