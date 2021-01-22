@@ -1,39 +1,6 @@
 const express = require("express")
 const app = express()
 
-const transactions = [
-    {
-        id: 1,
-        description: "iptu",
-        amount: "-100",
-        date: "22/01/2021"
-    }
-    // {
-    //     id: 2,
-    //     description: "iptu",
-    //     amount: "-100",
-    //     date: "22/01/2021"
-    // },
-    // {
-    //     id: 3,
-    //     description: "iptu",
-    //     amount: "-100",
-    //     date: "22/01/2021"
-    // },
-    // {
-    //     id: 4,
-    //     description: "iptu",
-    //     amount: "-100",
-    //     date: "22/01/2021"
-    // },
-    // {
-    //     id: 5,
-    //     description: "iptu",
-    //     amount: "-100",
-    //     date: "22/01/2021"
-    // }
-]
-
 const db = require("./db")
 app.use(express.json())
 app.use(express.static(__dirname + "/src"))

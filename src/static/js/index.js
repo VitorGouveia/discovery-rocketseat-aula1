@@ -55,5 +55,6 @@ function toggleTheme() {
 })()
 
 const deleteTransaction = id => {
-    window.location.href = `http://localhost:3333/${id}`
+    window.location.href = `https://maratona-discovery.herokuapp.com/${id}`
+    // window.location.href = `http://localhost:3333/${id}`
 }
