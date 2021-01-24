@@ -6,29 +6,36 @@ if("serviceWorker" in navigator) {
     console.log("Registro de service worker falhou")
 }
 
-document.querySelector(".new").addEventListener("click", () => {
-    document.querySelector(".form-modal").classList.toggle("active")
-})
+const $ = document.querySelector.bind(document)
 
-document.querySelector("#form-button").addEventListener("click", () => {
-    document.querySelector(".form-modal").classList.toggle("active")
-})
+const html = {
+    novaTransacao: $(".form-modal"),
+    themeModal: $(".settings-modal")
+}
 
-document.querySelector("#settings").addEventListener("click", () => {
-    document.querySelector(".settings-modal").classList.toggle("active")
-})
+const assignClass = (elemento, classe) => {
+    return elemento.classList.toggle(classe)
+}
 
-document.querySelector("#settings-button").addEventListener("click", () => {
-    document.querySelector(".settings-modal").classList.toggle("active")
-})
+//NOVA TRANSAÇÃO MODAL
+$(".new").addEventListener("click", () => assignClass(html.novaTransacao, "active"))
+$("#form-button").addEventListener("click", () => assignClass(html.novaTransacao, "active"))
 
-document.querySelector(".settings-modal button").addEventListener("click", () => {
-    document.querySelector(".settings-modal").classList.toggle("active")
+//TROCAR TEMA MODAL
+$("#settings").addEventListener("click", () => assignClass(html.themeModal, "active"))
+$("#settings-button").addEventListener("click", () => assignClass(html.themeModal, "active"))
 
-    if(document.querySelector("#theme").selectedIndex == 0) {
+
+//THEME SWITCHER
+$(".settings-modal button").addEventListener("click", () => {
+    html.themeModal.classList.toggle("active")
+
+    if($("#theme").selectedIndex == 0) {
         setTheme("light")
-    } else {
+    } else if ($("#theme").selectedIndex == 1) {
         setTheme("omni")
+    } else {
+        setTheme("launchbase")
     }
 })
 
@@ -38,10 +45,12 @@ function setTheme(themeName) {
 }
 
 function toggleTheme() {
-    if (localStorage.getItem("theme") === "theme-dark") {
+    if (localStorage.getItem("theme") === "omni") {
         setTheme("light")
-    } else {
+    } else if (localStorage.getItem("theme") === "light") {
         setTheme("omni")
+    } else {
+        setTheme("launchbase")
     }
 }
 
@@ -49,12 +58,14 @@ function toggleTheme() {
     if (localStorage.getItem("theme") === "omni") {
         setTheme("omni")
         
-    } else {
+    } else if (localStorage.getItem("theme") === "light") {
         setTheme("light")
+    } else {
+        setTheme("launchbase")
     }
 })()
 
 const deleteTransaction = id => {
-    window.location.href = `https://maratona-discovery.herokuapp.com/${id}`
-    // window.location.href = `http://localhost:3333/${id}`
+    // window.location.href = `https://maratona-discovery.herokuapp.com/${id}`
+    window.location.href = `http://localhost:3333/${id}`
 }

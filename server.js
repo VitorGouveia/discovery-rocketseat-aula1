@@ -66,4 +66,15 @@ app.get("/:id", (req, res) => {
     })
 })
 
+// app.get("/edit/:id", (req, res) => {
+//     db.all(`SELECT * FROM transactions WHERE id = ${req.params.id}`, function(err, rows) {
+//         if(err) {
+//             console.log(err)
+//             return res.send("Erro no banco de dados")
+//         }
+//         console.log(rows)
+//         console.log(`editando transação com id ${req.params.id}`)
+//     })
+// })
+
 app.listen(process.env.PORT || 3333, () => console.log("http://127.0.0.1:3333 ou htttp://localhost:3333"))
