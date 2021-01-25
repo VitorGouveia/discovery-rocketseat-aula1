@@ -11,9 +11,8 @@
 
     <title>dev.finance$</title>
     <link rel="icon" href="/static/assets/logo.svg">
-    <link rel="stylesheet" href="/static/css/global.css" />
     <link rel="manifest" href="manifest.webmanifest" />
-    <link rel="stylesheet" href="/static/css/styles.css" />
+    <link rel="stylesheet" defer href="/static/css/styles.css" />
 
     <script defer src="/static/js/index.js"></script>
 </head>
@@ -38,7 +37,7 @@
         </svg>
             
         <!-- <img src="/static/assets/logo.svg" id="logo" alt="logo dev.finance$"> -->
-        <img src="/static/assets/sliders.svg" id="settings" alt="configurações">
+        <img width="24px" height="24px" src="/static/assets/sliders.svg" id="settings" alt="configurações">
     </header>
 
     <main class="container">
@@ -48,7 +47,7 @@
                 <div class="card">
                     <h3>
                         <span>Entradas</span>
-                        <img src="/static/assets/income.svg" alt="Imagem de entradas">
+                        <img src="/static/assets/income.svg" width="22px" height="22px" alt="Imagem de entradas">
                     </h3>
                     <p>R$ 5.000,00</p>
                 </div>
@@ -56,7 +55,7 @@
                 <div class="card minus">
                     <h3>
                         <span>Saidas</span>
-                        <img src="/static/assets/expense.svg" alt="Imagem de saidas">
+                        <img src="/static/assets/expense.svg" width="22px" height="22px" alt="Imagem de saidas">
                     </h3>
                     <p>R$ 2.000,00</p>
                 </div>
@@ -64,7 +63,7 @@
                 <div class="card total">
                     <h3>
                         <span>Total</span>
-                        <img src="/static/assets/total.svg" alt="Imagem de total">
+                        <img src="/static/assets/total.svg" width="22px" height="22px" alt="Imagem de total">
                     </h3>
                     <p>R$ 3.000,00</p>
                 </div>
@@ -81,61 +80,21 @@
                         <th>Valor</th>
                         <th>Data</th>
                         <th></th>
-                        <th></th>
-                    </tr>
                 </thead>
 
                 <tbody>
                     {% for transaction in transactions %}
                         <tr>
                             <td class="description">{{transaction.description}}</td>
-                            {% if transaction.amount > -1 %}
+                            {% if transaction.amount == "R$&nbsp;10,00" %}
                                 <td class="income amount">{{transaction.amount}}</td>
                             {% else %}
                                 <td class="expense amount">{{transaction.amount}}</td>
                             {% endif %}
                             <td class="date">{{transaction.date}}</td>
-                            <td><img onclick="deleteTransaction({{transaction.id}})" src="/static/assets/minus.svg" alt="remover transação"></td>
-                            <td>
-                                <svg class="edit"
-                                    onClick="editTransaction({{transaction.id}})"
-                                    xmlns="http://www.w3.org/2000/svg" 
-                                    width="24" 
-                                    height="24" 
-                                    viewBox="0 0 24 24" 
-                                    fill="none" 
-                                    stroke="none" 
-                                    stroke-width="2" 
-                                    stroke-linecap="round" 
-                                    stroke-linejoin="round" 
-                                    class="feather feather-edit">
-                                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                                </svg>
-                            </td>
+                            <td><img onclick="deleteTransaction({{transaction.id}})" width="15px" height="15px" src="/static/assets/minus.svg" alt="remover transação"></td>
                         </tr>
                     {% endfor %}
-
-                    <!-- <tr>
-                        <td class="description">Luz</td>
-                        <td class="expense">- R$ 500,00</td>
-                        <td class="date">23/01/2021</td>
-                        <td><img src="/static/assets/minus.svg" alt="remover transação"></td>
-                    </tr>
-
-                    <tr>
-                        <td class="description">Criação de website</td>
-                        <td class="income">R$ 5.000,00</td>
-                        <td class="date">23/01/2021</td>
-                        <td><img src="/static/assets/minus.svg" alt="remover transação"></td>
-                    </tr>
-
-                    <tr>
-                        <td class="description">Internet</td>
-                        <td class="expense">- R$ 200,00</td>
-                        <td class="date">23/01/2021</td>
-                        <td><img src="/static/assets/minus.svg" alt="remover transação"></td>
-                    </tr> -->
                 </tbody>
             </table>
         </section>

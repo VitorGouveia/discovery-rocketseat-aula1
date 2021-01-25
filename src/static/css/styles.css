@@ -1,3 +1,5 @@
+@import "global.css";
+
 /* ================== HEADER ================== */
 header {
     background: var(--header-bg);
@@ -114,9 +116,14 @@ table td {
     padding: 1rem 2rem;
 }
 
-table td img {
+table td img,
+table td svg {
     width: 1.2rem;
     height: 1.2rem;
+}
+
+table td .edit:focus {
+    background: red;
 }
 
 table td .edit {

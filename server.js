@@ -22,11 +22,12 @@ app.get("/", (req, res) => {
         const reversedTransactions = [...rows].reverse()
 
         let lastTransactions = []
-
+        
         for(let transaction of reversedTransactions) {
             lastTransactions.push(transaction)
         }
 
+        console.log(lastTransactions)
         return res.render("index.html", { transactions: lastTransactions })
     })
 })
@@ -34,6 +35,7 @@ app.get("/", (req, res) => {
 app.post("/", function(req, res) {
     const { description, amount, date } = req.body
     const reversedDate = date.replace(/-/g, "/").split("/").reverse().join("/")
+    const formatAmount = new Intl.NumberFormat("pt-br", { style: "currency", currency: "BRL" }).format(amount)
     const query = `
         INSERT INTO transactions(
             description,
@@ -42,7 +44,7 @@ app.post("/", function(req, res) {
         ) VALUES (?, ?, ?)
     `
 
-    const values = [description, amount, reversedDate]
+    const values = [description, formatAmount, reversedDate]
 
     db.run(query, values, function(err) {
         if(err) {
