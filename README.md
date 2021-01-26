@@ -23,6 +23,7 @@ A página principal é responsável por executar todas as funções principais d
 ## **Novas Features**:
 - ### Theme Switcher
 - ### Editar Transações
+- ### Função PWA
 ***
 ## Tecnologias
 - [Node.js](https://nodejs.org/en/)
