@@ -10,7 +10,8 @@ const $ = document.querySelector.bind(document)
 
 const html = {
     novaTransacao: $(".form-modal"),
-    themeModal: $(".settings-modal")
+    editModal: $(".edit-modal"),
+    themeModal: $(".settings-modal"),
 }
 
 const assignClass = (elemento, classe) => {
@@ -20,6 +21,10 @@ const assignClass = (elemento, classe) => {
 //NOVA TRANSAÇÃO MODAL
 $(".new").addEventListener("click", () => assignClass(html.novaTransacao, "active"))
 $("#form-button").addEventListener("click", () => assignClass(html.novaTransacao, "active"))
+
+//Edição Transação
+$(".edit").addEventListener("click", () => assignClass(html.editModal, "active"))
+$("#edit-button").addEventListener("click", () => assignClass(html.editModal, "active"))
 
 //TROCAR TEMA MODAL
 $("#settings").addEventListener("click", () => assignClass(html.themeModal, "active"))

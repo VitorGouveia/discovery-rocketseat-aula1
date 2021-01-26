@@ -27,15 +27,14 @@ app.get("/", (req, res) => {
             lastTransactions.push(transaction)
         }
 
-        console.log(lastTransactions)
         return res.render("index.html", { transactions: lastTransactions })
     })
 })
 
 app.post("/", function(req, res) {
-    const { description, amount, date } = req.body
+    let { description, amount, date } = req.body
     const reversedDate = date.replace(/-/g, "/").split("/").reverse().join("/")
-    const formatAmount = new Intl.NumberFormat("pt-br", { style: "currency", currency: "BRL" }).format(amount)
+    // const formatAmount = new Intl.NumberFormat("pt-br", { style: "currency", currency: "BRL" }).format(amount)
     const query = `
         INSERT INTO transactions(
             description,
@@ -44,7 +43,12 @@ app.post("/", function(req, res) {
         ) VALUES (?, ?, ?)
     `
 
-    const values = [description, formatAmount, reversedDate]
+    if(amount <= -1) {
+        formatAmount = amount.split("-").join("")
+        amount = `- R$ ${formatAmount}`
+    }
+
+    const values = [description, amount, reversedDate]
 
     db.run(query, values, function(err) {
         if(err) {
@@ -68,15 +72,27 @@ app.get("/:id", (req, res) => {
     })
 })
 
-// app.get("/edit/:id", (req, res) => {
-//     db.all(`SELECT * FROM transactions WHERE id = ${req.params.id}`, function(err, rows) {
-//         if(err) {
-//             console.log(err)
-//             return res.send("Erro no banco de dados")
-//         }
-//         console.log(rows)
-//         console.log(`editando transação com id ${req.params.id}`)
-//     })
-// })
+app.post("/edit", (req, res) => {
+    let { transactions, description, amount, date } = req.body
+    let reversedDate = date.replace(/-/g, "/").split("/").reverse().join("/")
+
+    if(amount <= -1) {
+        formatAmount = amount.split("-").join("")
+        amount = `- R$ ${formatAmount}`
+    }
+
+    let query = `
+        UPDATE transactions SET description='${description}', amount='${amount}', date='${reversedDate}' WHERE id='${transactions}'
+    `
+
+    db.all(query, function(err) {
+        if (err) {
+            console.log(err)
+            return res.send("Erro no banco de dados!")
+        }
+        console.log(transactions, description, amount, reversedDate)
+        return res.redirect("/")
+    })
+})
 
 app.listen(process.env.PORT || 3333, () => console.log("http://127.0.0.1:3333 ou htttp://localhost:3333"))

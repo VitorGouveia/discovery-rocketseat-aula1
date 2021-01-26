@@ -71,6 +71,26 @@ header svg path.special {
     color: #fff;
 }
 
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+a.edit {
+    display: flex;
+    align-items: center;
+}
+
+a.edit svg {
+    stroke:  var(--light-button-primary);
+    margin: 0 1rem;
+}
+
+a.edit:hover svg {
+    stroke: var(--button-primary);
+}
+
 /* ================== TABLE ================== */
 #data-table {
     width: 100%;
@@ -114,18 +134,9 @@ table td {
     padding: 1rem 2rem;
 }
 
-table td img,
-table td svg {
+table td img {
     width: 1.2rem;
     height: 1.2rem;
-}
-
-table td .edit:focus {
-    background: red;
-}
-
-table td .edit {
-    stroke: var(--header-bg);
 }
 
 td.description {
@@ -139,7 +150,6 @@ td.income {
 td.expense {
     color: #e92929;
 }
-
 /* =================== MODAL =================== */
 .modal-overlay {
     width: 100%;
@@ -206,6 +216,20 @@ td.expense {
     margin: 0 0 0 1rem;
 }
 
+.edit-modal .input-group.actions:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.edit-modal .input-group.actions:nth-child(1) label:first-child {
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.edit-modal .input-group.actions:nth-child(1) select {
+    width: 100%;
+}
 /* ================== FOOTER ================== */
 footer {
     text-align: center;
