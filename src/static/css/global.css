@@ -92,7 +92,8 @@ a:hover {
     color: var(--button-primary);
 }
 
-.button.new {
+.button.new,
+.button.edit {
     display: inline-block;
     margin-bottom: 0.8rem;
 }

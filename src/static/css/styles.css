@@ -36,6 +36,7 @@ header svg path.special {
 }
 
 .card {
+    width: 32%;
     background: var(--card-income);
     padding: 1.5rem 2rem;
     border-radius: 0.25rem;
@@ -242,6 +243,10 @@ footer {
 @media (max-width: 1024px) {
     .cards {
         flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
     }
 }
 
