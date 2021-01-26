@@ -22,12 +22,23 @@ app.get("/", (req, res) => {
         const reversedTransactions = [...rows].reverse()
 
         let lastTransactions = []
+
+        let income = Number(0)
+        let expense = Number(0)
         
         for(let transaction of reversedTransactions) {
             lastTransactions.push(transaction)
+            let formattedAmount = transaction.amount.split("-").join("").split("R$").join("")
+            if(transaction.amount >= 0) {
+                income += Number(formattedAmount)
+            } else {
+                expense += Number(formattedAmount)
+            }
         }
+        let total = income - expense
 
-        return res.render("index.html", { transactions: lastTransactions })
+
+        return res.render("index.html", { transactions: lastTransactions, income: income, expense:  expense, total: total })
     })
 })
 
