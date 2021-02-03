@@ -1,6 +1,7 @@
 # ![WebApp](https://iili.io/ffCWiX.png)
 # DEV.FINANCE$
-App para controle de finanças
+App para controle de finanças<br>
+use `git clone --single-branch --branch npm https://github.com/VitorGouveia/maratona-discover.git` para clonar essa branch
 
 ## Demonstração
 Link de uma demonstração :  https://maratona-discovery.herokuapp.com
